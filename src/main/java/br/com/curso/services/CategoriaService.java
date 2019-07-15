@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.com.curso.domain.Categoria;
+import br.com.curso.dto.CategoriaDTO;
 import br.com.curso.repositories.CategoriaRepository;
 import br.com.curso.services.exceptions.DataIntegrityException;
 import br.com.curso.services.exceptions.ObjectNotFoundException;
@@ -54,6 +55,10 @@ public class CategoriaService {
 			PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 			return repo.findAll(pageRequest);
 		
+	}
+	
+	public Categoria fromDTO(CategoriaDTO objDto){
+		return new Categoria(objDto.getId(), objDto.getNome());
 	}
 
 }
