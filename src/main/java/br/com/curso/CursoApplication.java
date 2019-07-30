@@ -14,7 +14,7 @@ import br.com.curso.domain.Cliente;
 import br.com.curso.domain.Endereco;
 import br.com.curso.domain.Estado;
 import br.com.curso.domain.ItemPedido;
-import br.com.curso.domain.PagamanetoComBoleto;
+import br.com.curso.domain.PagamentoComBoleto;
 import br.com.curso.domain.Pagamento;
 import br.com.curso.domain.PagamentoComCartao;
 import br.com.curso.domain.Pedido;
@@ -136,7 +136,7 @@ public class CursoApplication  implements CommandLineRunner{
 		Pagamento pagto1 = new PagamentoComCartao(null, EstadoPagamento.QUITADO, ped1, 6);
 		ped1.setPagamento(pagto1);
 		
-		Pagamento pagto2 = new PagamanetoComBoleto(null, EstadoPagamento.PENDENTE, ped2, sdf.parse("20/10/2017 00:00"), null);
+		Pagamento pagto2 = new PagamentoComBoleto(null, EstadoPagamento.PENDENTE, ped2, sdf.parse("20/10/2017 00:00"), null);
 		ped2.setPagamento(pagto2);
 		
 		cli1.getPedidos().addAll(Arrays.asList(ped1,ped2));
